@@ -33,6 +33,7 @@ condiciones_type = [data_final['listing_type_id'].str.contains('bronze',case=Fal
                     data_final['listing_type_id'].str.contains('silver',case=False, na=False),
                     data_final['listing_type_id'].str.contains('gold',case=False, na=False)]
 
+opciones_type = ["bronze","free","silver","gold"]
 
 data_final["listing_type_id_final"] = np.select(condiciones_type,opciones_type,default="Otro")
 
